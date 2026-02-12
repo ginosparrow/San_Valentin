@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>San Valentino</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const arrowBtn = document.querySelector('.button');
+            const boxProposta = document.querySelector('.boxproposta');
+            const btnNo = document.getElementById('no');
+            const btnYes = document.getElementById('yes');
+
+            // Scroll fluido verso la proposta
+            arrowBtn.addEventListener('click', () => {
+                boxProposta.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+
+            // Bottone NO che scappa ma resta nello schermo
+            btnNo.addEventListener('mouseover', () => {
+                const maxX = window.innerWidth - 20;
+                const maxY = window.innerHeight - 20;
+
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                btnNo.style.position = 'fixed';
+                btnNo.style.left = randomX + 'px';
+                btnNo.style.top = randomY + 'px';
+            });
+
+            // Bottone YES
+            btnYes.addEventListener('click', () => {
+                window.location.href = "secondario.html"; 
+            });
+        });
+    </script>
+
+
+    <body>
+        <div class="cornicemain">
+            <div class="subcontainer">
+                <img src="fiore1.png" alt="fiori">
+                
+                <div class="bordoverticale"></div>
+
+                <div class="testo">
+                    <h2>
+                        月が綺麗ですね
+                    </h2>
+                </div>
+            </div>
+
+            <div class="bordoriziontale"></div>
+
+            <div class="subcontainer2">
+                <div id="arrow-down" class="button">
+                    <svg class="svgIcon" viewBox="0 0 384 512" width="40" height="40">
+                        <path
+                        d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="space">
+
+        </div>
+
+        <div class="boxproposta">
+            <div class="domanda">
+                <h1>Vuoi essere la mia Valentina?</h1>
+            </div>
+            <div class="boxpulsanti">
+                <div id="yes" class="pulsanit">
+                    <h1>Yes</h1>
+                </div>
+                <div id="no" class="pulsanit">
+                    <h1>No</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="space1">
+
+        </div>
+
+        
+    </body>
+
+</html
